@@ -1,0 +1,185 @@
+
+
+body{
+    margin: 0;
+}
+
+.main{
+    height: auto;
+    background-color: #d8e1f0;
+    padding-bottom: 2px;
+}
+
+.sidebar{
+    width: 12%;
+    height: 32rem;
+}
+
+ul{
+    margin-top: 6rem;
+    padding: 2.5rem 2rem;
+}
+
+ul li{
+    list-style: none;
+    margin-bottom: 1.2rem;
+}
+
+ul li a, td a, .card-button a{
+    text-decoration: none;
+}
+
+ul li a{
+    color: #d63384;
+}
+
+.sidebar,  header, .card, .card-sm, .card-form{
+    background-color: #fff;
+}
+
+.content{
+    width: 89%;
+}
+
+header{
+    font-size: xx-large;
+    text-align: center;
+    align-items: center;
+}
+
+header h1{
+    margin-top: 0;
+    padding: 1rem 1.5rem
+}
+
+.card{
+    width: 96%;
+}
+
+.card-sm, .card {
+    margin-left: 1rem;
+}
+
+.card-body, .sub-card, .main, .card-header{
+    display: flex;
+}
+
+.card-sm{
+    width: 20%;
+    height: 9rem;
+    border-radius: .3rem;
+    padding: 1.5rem 1.3rem;
+}
+
+.card-header{
+    margin-left: 2.5rem ;
+}
+
+.card-button {
+    width: 80%;
+    margin-left: 4rem;
+    text-align: right;
+    padding-top: 1.4rem;
+}
+
+.card-button a{
+   background-color: #3d46f8;
+   padding: .8rem 2rem;
+   border-radius: .3rem;
+   color: #fff;
+}
+
+
+.card-form{
+   width: 35%;
+   height: auto;
+   padding: .2rem;
+   border-radius: .3rem;
+   margin-bottom: 3rem;
+}
+
+.card-form h4{
+    font-family: initial;
+
+}
+
+.card-form form{
+   margin-bottom: 2rem;
+}
+
+.card-form form input, .card-form form select{
+    border-radius: .26rem;
+    outline: none;
+    border: .1rem solid #b7b7b7;
+    margin-bottom: .8rem;
+}
+
+.card-form form input{
+    width: 85%;
+    line-height: 1.8rem;
+    padding: .3rem 1rem;
+}
+
+.card-form form input[type='submit']{
+    background-color:  #15b376;
+    color: #fff;
+    border: none;
+    width: 92%;
+    cursor: pointer;
+}
+
+.card-form form select{
+    width: 92%;
+    padding: .8rem 1rem;
+    background-color: #fff;
+}
+
+
+.table{
+    padding: 2.5rem;
+    vertical-align: top;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.table>thead {
+    vertical-align: bottom;
+}
+
+thead th{
+    border-top: 1px solid #dedede ;
+}
+
+thead th:last-child, tbody td:last-child{
+    border-right: 1px solid #dedede ;
+}
+
+thead th, tbody td {
+    border-bottom: 1px solid #dedede ;
+    border-left:  1px solid #dedede;
+    padding: .8rem;
+}
+
+tbody tr:hover{
+    background-color: #d8e1f0;
+    cursor: pointer;
+}
+
+.edit, .delete{
+    text-align: center;
+}
+
+.edit a, .delete a{
+    color: #fff;
+    padding: .6rem 2rem;
+    border-radius: .3rem;
+    margin-top: 1rem;  
+}
+
+.delete a{
+    background-color: #d63384;
+}
+
+.edit a{
+    background-color: #15b376;
+}

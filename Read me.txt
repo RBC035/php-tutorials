@@ -1,0 +1,6 @@
+This is full php tutorials from basic to advance using structured php, object oriented php with MYSQL, PDO and MVC
+
+1) Create database named phpTutorials
+2) Import database file phpTutorials.sql
+3) username : learnPHP  
+4) password : Tutorials-2024

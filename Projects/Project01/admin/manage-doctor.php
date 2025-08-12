@@ -1,0 +1,116 @@
+<?php include "inc/header.php"; ?>
+
+  <!-- ======= Sidebar ======= -->
+    <?php include "inc/sidebar.php"; ?>
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <!-- <h1>Data Tables</h1> -->
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="./" >Home</a></li>
+          <li class="breadcrumb-item active">Manage doctor</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card overflow-auto">
+            <div class="card-body ">
+              <div class="row">
+                <div class="col-10">
+                    <h5 class="card-title">Manage doctor</h5>
+                </div>
+                <div class="col-2 mt-3">
+                    <a href="register-doctor.php" class="btn btn-outline-primary">Add doctor</a>
+                </div>
+              </div>
+
+              <!-- Table with stripped rows -->
+              <table class="table datatable table-hover table-stripped ">
+                <thead>
+                  <tr>
+                    <th>
+                      <b>S/N</b>
+                    </th>
+                    <th>Doctor ID</th>
+                    <th>Full name</th>
+                    <th data-type="date" data-format="YYYY/DD/MM">DOB</th>
+                    <th>Phone number</th>
+                    <th>Address</th>
+                    <th>Permission</th>
+                    <th>View</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <?php 
+                    $no = 1;
+                    $select = "select * from doctor  ";
+                    $query = mysqli_query($con, $select);
+                    while($row = mysqli_fetch_array($query)){
+                ?>
+                  <tr>
+                    <td><?php echo $no; ?></td>
+                    <td><?php echo $row["DoctorID"]; ?></td>
+                    <td><?php echo ucwords($row["FirstName"]." ".$row["LastName"]); ?></td>
+                    <td><?php echo $row["DateOfBirth"]; ?></td>
+                    <td><?php echo $row["PhoneNumber"]; ?></td>
+                    <td><?php echo $row["Address"]; ?></td>
+                    <td class="text-center">
+                      <?php 
+                          if ($row['status'] == 'Enable') 
+                          {
+                      ?>
+                          <i class="bi bi-check-circle-fill text-success " title="Enable"></i>
+                      <?php
+                          }
+                          else 
+                          {
+                        ?>
+                          <i class="bi bi-x-circle-fill text-danger" title="Disable"></i>
+                        <?php
+                          }
+                        ?>
+                    </td>
+                    <td class="text-center"><a title="View doctor" href="doctor-edit.php?id=<?php echo $row['DoctorID']; ?>" ><i class="bi bi-eye-fill text-success "></i></a> </td>
+                    <td class="text-center"><a title="Delete doctor" href="doctor-handler.php?en=<?php echo $row['DoctorID'];  ?>" onclick="return confirm('Are you sure want to disable or enable this doctor..?')">
+                      <?php 
+                        if ($row['status'] == 'Enable') 
+                        {
+                     ?>
+                        <i class="bi bi-trash-fill text-danger "></i>
+                     <?php
+                        }
+                        else 
+                        {
+                      ?>
+                        <i class="bi bi-trash-fill text-secondary "></i>
+                      <?php
+                        }
+                      ?>
+                    </a></td>
+                  </tr>
+                <?php
+                    $no += 1;
+                  }
+                ?>
+
+                </tbody>
+              </table>
+              <!-- End Table with stripped rows -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+<?php include "inc/footer.php"; ?>
